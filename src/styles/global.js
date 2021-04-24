@@ -16,6 +16,7 @@ export const GlobalStyle = createGlobalStyle`
 export const theme = {
   colors:{
     silver:'#BFBFBF',
-    boulder: '#7A7A7A'
+    boulder: '#7A7A7A',
+    carnation: '#F8475F'
   }
 }
