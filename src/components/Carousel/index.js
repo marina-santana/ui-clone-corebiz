@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container } from './styles';
-import ImgBanner from '../../assets/banner.png';
 
 function Carousel() {
   return (
