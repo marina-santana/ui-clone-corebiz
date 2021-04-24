@@ -18,16 +18,16 @@ export const Container = styled.div`
     margin-left: 20%;
   }
 
-  span{
+  h2, h3{
    color: white;
   }
 
-  span:first-of-type{
+  h2{
     font-weight: 400;
-    font-size: 1.75em;
+    font-size: 1.5em;
   }
 
-  span:last-of-type{
+  h3{
     font-weight: 700;
     font-size: 2.25em;
   }
