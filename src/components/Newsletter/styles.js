@@ -20,7 +20,7 @@ export const Container = styled.footer`
     display: flex;
   }
 
-  input[type=text]{
+  input[type=text], input[type=email]{
     border: none;
     padding: 15px;
     border-radius: 5px;
@@ -52,5 +52,23 @@ export const Container = styled.footer`
     color: ${theme.colors.crimson};
     padding: 5px 0;
   }
+  .success{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   
+  .success h4{
+    font-weight: bold;
+  }
+
+  .success h5{
+    font-weight: normal;
+    font-size: 1rem;
+  }
+
+  .success input{
+    width: 328px;
+    margin-top: 20px;
+  }
 `;
