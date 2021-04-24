@@ -17,10 +17,6 @@ export const Container = styled.footer`
     align-items: center;
   }
 
-  .location h3{
-    
-  }
-
   .location hr{
     width: 40px;
     height: 3px;
@@ -73,6 +69,11 @@ export const Container = styled.footer`
     margin-left: 30px;
   }
 
+  .info span{
+    font-weight: normal;
+    font-size: .9rem;
+  }
+
   .info svg{
     width: 80px;
     height: 40px;
@@ -80,5 +81,17 @@ export const Container = styled.footer`
 
   .info svg path{
     fill: white;
+  }
+
+  @media (max-width: 720px) {
+    height: 520px;
+
+    > div{
+      flex-direction: column;
+    }
+
+    .contact {
+      margin: 50px 0 30px;
+    }
   }
 `;

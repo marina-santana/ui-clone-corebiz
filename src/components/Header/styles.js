@@ -15,6 +15,10 @@ export const Container = styled.header`
     padding: 20px;
   }
 
+  .menu-box{
+    display: none;
+  }
+
   .logo-box{
     margin-right: auto;
   }
@@ -57,4 +61,35 @@ export const Container = styled.header`
     color: ${theme.colors.boulder}
   }
 
+  @media (max-width: 720px) {
+    height: 110px;
+
+    > div{
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .menu-box{
+      display: block;
+    }
+
+    .logo-box{
+      margin-right: 0;
+    }
+
+    .logo-box svg{
+      max-width: 150px;
+      margin-top: -15px;
+    }
+    
+    .search-box{
+      position: absolute;
+      margin-top: 60px;
+      max-width: 90%;
+    }
+
+    .account-box{
+      display: none;  
+    }
+  }  
 `;

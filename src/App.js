@@ -3,16 +3,19 @@ import Header from './components/Header';
 import Carousel from './components/Carousel';
 import Footer from './components/Footer';
 import Newsletter from './components/Newsletter';
+import Products from './components/pages/Products';
+import './styles/fonts.css'
 
 function App() {
   return (
-    <div className="App">
+    <body>
       <GlobalStyle/>
       <Header/>
       <Carousel/>
+      <Products/>
       <Newsletter/>
       <Footer/>
-    </div>
+      </body>
   );
 }
 

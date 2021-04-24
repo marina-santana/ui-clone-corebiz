@@ -4,11 +4,15 @@ import {ReactComponent as SvgLogo} from '../../assets/logo.svg';
 import {ReactComponent as SvgMagnifier}  from '../../assets/magnifier.svg'
 import {ReactComponent as SvgUser}  from '../../assets/user.svg'
 import {ReactComponent as SvgCart}  from '../../assets/cart.svg'
+import {ReactComponent as SvgMenu}  from '../../assets/menu.svg'
 
 function Header() {
   return (
     <Container>
       <div>
+        <div className="menu-box">
+          <SvgMenu/>
+        </div>
         <div className="logo-box">
           <SvgLogo/>
         </div>

@@ -14,6 +14,8 @@ export const Container = styled.footer`
     color: ${theme.colors.mineShaft};
     font-weight: bold;
     margin-bottom: 10px;
+    font-size: 1.5rem;
+    text-align: center;
   }
 
   form{
@@ -71,4 +73,32 @@ export const Container = styled.footer`
     width: 328px;
     margin-top: 20px;
   }
+
+  @media (max-width: 720px) {
+    padding: 20px;
+    height: auto;
+    width: auto;
+
+    input[type=text], input[type=email]{
+      width: 90%;
+      margin-bottom: 20px;
+    }
+
+    input[type=submit]{
+      width: 100%;
+      margin-top: -15px;
+    }
+    
+    input[type=submit],  .container-input + .container-input{
+      margin-left: 0;
+    }
+
+    h3{
+      text-align: left;
+    }
+
+    form{
+      flex-direction: column;
+    }
+  }  
 `;

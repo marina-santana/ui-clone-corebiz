@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container } from './styles';
 import { useForm } from 'react-hook-form';
 import { theme } from '../../styles/global';
+import { newsletter } from '../../services/api';
 
 function Newsletter() {
 
@@ -13,8 +14,14 @@ function Newsletter() {
     reset,
     formState: { errors }
   } = useForm();
-  const onSubmit = () => {
-    setShowForm(false)
+
+
+  const onSubmit = async(data) => {
+      const response = await newsletter.create(data);
+
+      if(response.status === 200){
+        setShowForm(false)
+      }
   };
 
   const checkIfFieldIsEmpty = (error) => {
