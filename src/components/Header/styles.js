@@ -21,19 +21,18 @@ export const Container = styled.header`
 
   .logo-box{
     margin-right: auto;
+    display: flex;
   }
 
-  .logo-box::after{
-    content: '';
-    display: inline-block;
+  .logo-box div{
     width: 10px;
     height: 10px;
-    -moz-border-radius: 7.5px;
-    -webkit-border-radius: 7.5px;
-    border-radius: 7.5px;
+    border-radius: 50%;
     background-color: ${theme.colors.silver};
-    margin-left: 3px;
+    margin-left: 2px;
+    margin-top: 31px;
   }
+
   .search-box{
     display: flex;
     border-bottom: 1px solid ${theme.colors.boulder};
@@ -62,7 +61,7 @@ export const Container = styled.header`
   }
 
   @media (max-width: 720px) {
-    height: 110px;
+    height: 90px;
 
     > div{
       justify-content: space-between;
@@ -78,13 +77,22 @@ export const Container = styled.header`
     }
 
     .logo-box svg{
-      max-width: 150px;
+      max-width: 100px;
       margin-top: -15px;
+    }
+
+    .logo-box div{
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: ${theme.colors.silver};
+      margin-left: 2px;
+      margin-top: 12px;
     }
     
     .search-box{
       position: absolute;
-      margin-top: 60px;
+      margin-top: 40px;
       max-width: 90%;
     }
 

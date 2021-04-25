@@ -32,7 +32,10 @@ function Footer() {
         <div className="info">
             <div>
               <span>Created by</span>
-              <SvgLogo/>
+              <div className="logo-box">
+                <SvgLogo/>
+                <div></div>
+              </div>
             </div>
             <div>
               <span>Powered by</span>

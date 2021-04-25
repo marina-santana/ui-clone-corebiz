@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { theme } from '../../styles/global';
 
 export const Container = styled.footer`
   width: 100%;
@@ -60,12 +61,25 @@ export const Container = styled.footer`
     display: flex;
   }
 
-  .info div{
+  .info > div{
     display: flex;
     flex-direction: column;
   }
 
-  .info div:last-of-type{
+  .logo-box{
+    display: flex;
+  }
+
+  .logo-box div{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: ${theme.colors.silver};
+    margin-left: 2px;
+    margin-top: 25px;
+  }
+
+  .info > div:last-of-type{
     margin-left: 30px;
   }
 

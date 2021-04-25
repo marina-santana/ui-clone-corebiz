@@ -15,6 +15,7 @@ function Header() {
         </div>
         <div className="logo-box">
           <SvgLogo/>
+          <div></div>
         </div>
         <div className="search-box">
           <input type="text" placeholder="O que está procurando?"/>
