@@ -8,7 +8,7 @@ import { products } from '../../services/api';
 import { formatCash } from '../../utils';
 import { responsive } from '../../utils'
 import { useDispatch } from 'react-redux';
-import { addProductToCart, sendProductToCart } from '../../store/cart/actions';
+import { addProductToCart } from '../../store/cart/actions';
 import { toast } from 'react-toastify';
 
 function Products() {

@@ -6,7 +6,6 @@ import {ReactComponent as SvgUser}  from '../../assets/user.svg'
 import {ReactComponent as SvgCart}  from '../../assets/cart.svg'
 import {ReactComponent as SvgMenu}  from '../../assets/menu.svg'
 import { useSelector } from 'react-redux';
-import { products } from '../../services/api';
 
 function Header() {
   const productsInCart = useSelector((state) => state.cart.items);
