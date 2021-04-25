@@ -5,7 +5,6 @@ import ImgOff from '../../../assets/off.png';
 export const Container = styled.div`
   width: 100%;
   display: flex;
-  height: 500px;
   align-items: center;
   justify-content: center;
   background-color: white;
@@ -38,11 +37,21 @@ export const Container = styled.div`
     width: 80px;
     height: 70px;
     background-repeat: no-repeat;
-    margin-left: 50%;
+    margin-left: 190px;
+  }
+
+  .products-carousel ul:first-of-type{
+    height: 460px;
+  }
+
+  .products-carousel li{
+    display: flex;
+    justify-content: center;
   }
 
   .product-card{
     width: 270px;
+    height: fit-content;
   }
 
   .product-card:hover{
@@ -72,7 +81,7 @@ export const Container = styled.div`
   }
 
   .rating{
-    margin: 10px 0;
+    margin: 5px 0;
   }
 
   .original-price{
@@ -109,4 +118,22 @@ export const Container = styled.div`
     display: none;
     cursor: pointer;
   }
+
+  @media (max-width: 720px) {
+    width: auto;
+    padding: 20px 10px 30px;
+
+    .product-card:hover{
+      background-color: white;
+    }
+    
+    .products-carousel ul:first-of-type{
+      height: auto;
+      padding-bottom: 20px;
+    }
+
+    .product-card-details button{
+      display: block;
+    }
+  }  
 `;

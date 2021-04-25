@@ -100,5 +100,9 @@ export const Container = styled.footer`
     form{
       flex-direction: column;
     }
+
+    .success h5{
+      margin-bottom: 25px;
+    }
   }  
 `;

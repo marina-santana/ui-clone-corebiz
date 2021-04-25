@@ -1,34 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import Carousel from "react-multi-carousel";
-
+import Rating from 'react-star-review';
 import { Container } from './styles';
 import "react-multi-carousel/lib/styles.css";
 import { theme } from '../../../styles/global';
 import { products } from '../../../services/api';
 import { formatCash } from '../../../utils';
-const responsive = {
-  superLargeDesktop: {
-    // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1
-  }
-};
+import { responsive } from '../../../utils'
 
 function Products() {
 
+  const [width, setWidth] = useState(window.innerWidth);
   const [productList, setProductList] = useState([]);
+
+  const handleWindowSizeChange = () => {
+      setWidth(window.innerWidth);
+  }
 
   useEffect(() => {
     async function fetchProducts() {
@@ -42,13 +29,26 @@ function Products() {
     fetchProducts()
   }, []);
 
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowSizeChange);
+    return () => {
+        window.removeEventListener('resize', handleWindowSizeChange);
+      }
+  }, []);
+
+  const detectingMobile = () =>  width <= 720;
+
   return (
     <Container>
       <div>
         <h3>Mais Vendidos</h3>
         <hr/>
-        <div className="products-carousel">
-        <Carousel responsive={responsive}>
+        <Carousel 
+          className="products-carousel"
+          responsive={responsive}
+          arrows={!detectingMobile()}
+          showDots={detectingMobile()}
+          >
           {productList.map(product => 
             <div className="product-card" key={product.productId}>
               {product.listPrice && (<span></span>)}
@@ -56,7 +56,7 @@ function Products() {
               <div className="product-card-details">
                 <h3>{product.productName}</h3>
                 <div className="rating">
-
+                  <Rating rating={product.stars} filledColor={theme.colors.carnation} borderColor={theme.colors.carnation}/>
                 </div>
                 {
                   product.listPrice && (
@@ -80,7 +80,6 @@ function Products() {
           )}
         </Carousel>
         </div>
-      </div>
     </Container>
   );
 }
