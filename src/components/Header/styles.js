@@ -60,6 +60,21 @@ export const Container = styled.header`
     color: ${theme.colors.boulder}
   }
 
+  .cart-box{
+    display: flex;
+    align-items: center;
+  }
+
+  .cart-box span{
+    padding: 3px 6px;
+    border-radius: 50%;
+    background-color: ${theme.colors.carnation};
+    margin-left: 5px;
+    color: white;
+    font-size: .7rem;
+    font-weight: 600;
+  }
+
   @media (max-width: 720px) {
     height: 90px;
 

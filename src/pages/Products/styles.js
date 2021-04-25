@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { theme } from '../../../styles/global';
-import ImgOff from '../../../assets/off.png';
+import { theme } from '../../styles/global';
+import ImgOff from '../../assets/off.png';
 
 export const Container = styled.div`
   width: 100%;

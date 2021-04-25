@@ -3,15 +3,20 @@ import Carousel from "react-multi-carousel";
 import Rating from 'react-star-review';
 import { Container } from './styles';
 import "react-multi-carousel/lib/styles.css";
-import { theme } from '../../../styles/global';
-import { products } from '../../../services/api';
-import { formatCash } from '../../../utils';
-import { responsive } from '../../../utils'
+import { theme } from '../../styles/global';
+import { products } from '../../services/api';
+import { formatCash } from '../../utils';
+import { responsive } from '../../utils'
+import { useDispatch } from 'react-redux';
+import { addProductToCart, sendProductToCart } from '../../store/cart/actions';
+import { toast } from 'react-toastify';
 
 function Products() {
 
   const [width, setWidth] = useState(window.innerWidth);
   const [productList, setProductList] = useState([]);
+
+  const dispatch = useDispatch();
 
   const handleWindowSizeChange = () => {
       setWidth(window.innerWidth);
@@ -37,6 +42,11 @@ function Products() {
   }, []);
 
   const detectingMobile = () =>  width <= 720;
+
+  const sendProductToCart = (product) =>{
+    toast.success('Produto adicionado ao carrinho');
+    dispatch(addProductToCart(product));
+  }
 
   return (
     <Container>
@@ -74,7 +84,7 @@ function Products() {
                   ou em {product.installments[0].quantity}x de R$ {formatCash(product.installments[0].value)}
                   </div>
                 )}
-                <button>COMPRAR</button>
+                <button onClick={() => sendProductToCart(product)}>COMPRAR</button>
               </div>
           </div>
           )}

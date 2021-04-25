@@ -5,8 +5,12 @@ import {ReactComponent as SvgMagnifier}  from '../../assets/magnifier.svg'
 import {ReactComponent as SvgUser}  from '../../assets/user.svg'
 import {ReactComponent as SvgCart}  from '../../assets/cart.svg'
 import {ReactComponent as SvgMenu}  from '../../assets/menu.svg'
+import { useSelector } from 'react-redux';
+import { products } from '../../services/api';
 
 function Header() {
+  const productsInCart = useSelector((state) => state.cart.items);
+
   return (
     <Container>
       <div>
@@ -25,7 +29,10 @@ function Header() {
           <SvgUser/>
           <span>Minha Conta</span>
         </div>
-        <SvgCart/>
+        <div className="cart-box">
+          <SvgCart/>
+          {productsInCart?.length > 0 && <span>{productsInCart?.length}</span>}
+        </div>
       </div>
     </Container>
   );

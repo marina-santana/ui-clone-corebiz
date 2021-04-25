@@ -3,8 +3,9 @@ import Header from './components/Header';
 import Carousel from './components/Carousel';
 import Footer from './components/Footer';
 import Newsletter from './components/Newsletter';
-import Products from './components/pages/Products';
+import Products from './pages/Products';
 import './styles/fonts.css'
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Products/>
       <Newsletter/>
       <Footer/>
+      <ToastContainer/>
       </body>
   );
 }
