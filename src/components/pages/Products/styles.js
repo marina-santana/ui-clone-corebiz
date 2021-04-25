@@ -1,25 +1,25 @@
 import styled from 'styled-components';
 import { theme } from '../../../styles/global';
+import ImgOff from '../../../assets/off.png';
 
 export const Container = styled.div`
   width: 100%;
   display: flex;
-  height: 430px;
+  height: 500px;
   align-items: center;
   justify-content: center;
   background-color: white;
-  padding-top: 30px;
+  padding: 30px 0 50px;
 
   > div{
     max-width: 1200px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: blue;
     height: 100%;
   }
 
-  h3{
+  > h3{
     color: black;
     font-weight: 900;
   }
@@ -32,5 +32,81 @@ export const Container = styled.div`
     border: none;
   }
 
-  
+  span{
+    background-image: url(${ImgOff});
+    position: absolute;
+    width: 80px;
+    height: 70px;
+    background-repeat: no-repeat;
+    margin-left: 50%;
+  }
+
+  .product-card{
+    width: 270px;
+  }
+
+  .product-card:hover{
+    cursor: pointer;
+    background-color: ${theme.colors.porcelain};
+  }
+
+  .product-card:hover > .product-card-details button{
+    display: block;
+  }
+
+  .product-card h3{
+    color: ${theme.colors.boulder};
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1rem;
+  }
+
+  img{
+    width: 100%;
+    background: blue;
+  }
+
+  .product-card-details{
+    padding: 10px 0 20px;
+    margin-top: -10px;
+  }
+
+  .rating{
+    margin: 10px 0;
+  }
+
+  .original-price{
+    color: ${theme.colors.boulder};
+    font-size: 1rem;
+  }
+
+  .price-now{
+    color: black;
+    font-size: 1.15rem;
+    font-weight: bold;
+   
+  }
+
+  .pay-installments{
+    color: ${theme.colors.boulder};
+    font-size: .9rem;
+  }
+
+  .product-card-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card-details button{
+    width: 150px;
+    height: 40px;
+    border:none;
+    color: white;
+    background: black;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: none;
+    cursor: pointer;
+  }
 `;
