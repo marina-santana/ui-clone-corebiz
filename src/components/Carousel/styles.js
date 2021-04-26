@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import ImgBanner from '../../assets/banner.png';
 import ImgBanner720 from '../../assets/banner-720.png';
+import ImgBanner from '../../assets/banner.png';
 import { theme } from '../../styles/global';
 
 export const Container = styled.div`
@@ -37,7 +37,9 @@ export const Container = styled.div`
     width: 100px;
     display: flex;
     justify-content: space-between;
-    margin-top: 23%;
+    position: relative;
+    z-index: 1;
+    margin-top: 350px;
   }
 
   .navigation div{
@@ -50,7 +52,7 @@ export const Container = styled.div`
 
   .navigation div:first-of-type{
     background-color: ${theme.colors.carnation};
-  }
+  }  
 
   @media (max-width: 720px) {
     width: auto;
@@ -66,6 +68,7 @@ export const Container = styled.div`
 
     .navigation{
       width: 80px;
+      margin-top: 150px;
     }
 
     .navigation div{
